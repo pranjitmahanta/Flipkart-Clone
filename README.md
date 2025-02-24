@@ -204,7 +204,7 @@ Responsive Design:
 - `PUT /api/admin/orders/:id` – Change order status.
 - `GET /api/admin/stats` – Fetch total users, orders, revenue.
 
-## 8. Deployment & Hosting
+## Deployment & Hosting
 
 | Component  | Deployment Platform |
 |------------|----------------------|
@@ -223,7 +223,7 @@ Responsive Design:
 
 ---
 
-## 10. Conclusion
+##  Conclusion
 
 This Flipkart Clone aims to provide a fully functional e-commerce experience with scalability, security, and performance optimization. The project will serve as a strong portfolio piece, showcasing expertise in full-stack web development with modern technologies.
 
