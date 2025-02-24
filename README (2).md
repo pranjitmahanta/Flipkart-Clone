@@ -140,8 +140,92 @@ Search Functionality:
 Utilize the search functionality to find specific products.
 Responsive Design:
 
+## Database Schema
 
+### 🔹 Users Table
+| Column Name  | Type        | Description           |
+|-------------|------------|-----------------------|
+| id          | INT (PK)    | Unique user ID       |
+| name        | VARCHAR     | User's full name     |
+| email       | VARCHAR (Unique) | User's email (login) |
+| password    | VARCHAR     | Hashed password      |
+| role        | ENUM       | user, admin          |
+| created_at  | TIMESTAMP   | Account creation date |
 
+### 🔹 Products Table
+| Column Name  | Type        | Description           |
+|-------------|------------|-----------------------|
+| id          | INT (PK)    | Unique product ID    |
+| name        | VARCHAR     | Product name         |
+| description | TEXT        | Product description  |
+| price       | DECIMAL     | Price of the product |
+| image_url   | VARCHAR     | Product image link   |
+| stock       | INT         | Available stock      |
+| category    | VARCHAR     | Product category     |
+| rating      | FLOAT       | Product rating       |
+
+### 🔹 Orders Table
+| Column Name  | Type        | Description               |
+|-------------|------------|---------------------------|
+| id          | INT (PK)    | Unique order ID          |
+| user_id     | INT (FK)    | User who placed the order |
+| total_price | DECIMAL     | Total cost               |
+| status      | ENUM       | Pending, Shipped, Delivered, Cancelled |
+| payment_status | ENUM    | Pending, Completed, Failed |
+| created_at  | TIMESTAMP   | Order creation date      |
+
+---
+
+##  API Endpoints
+
+### 🔹 User Authentication
+- `POST /api/register` – Register new users.
+- `POST /api/login` – Authenticate users.
+
+### 🔹 Product Management
+- `GET /api/products` – Fetch all products.
+- `POST /api/products` – Add new product (**Admin only**).
+- `PUT /api/products/:id` – Update product details (**Admin only**).
+- `DELETE /api/products/:id` – Remove a product (**Admin only**).
+
+### 🔹 Cart Management
+- `POST /api/cart` – Add product to cart.
+- `GET /api/cart/:userId` – Get cart items.
+- `DELETE /api/cart/:id` – Remove item from cart.
+
+### 🔹 Orders & Payments
+- `POST /api/orders` – Place an order.
+- `GET /api/orders/:userId` – Get order history.
+- `PUT /api/orders/:id` – Update order status (**Admin only**).
+
+### 🔹 Admin Panel
+- `GET /api/admin/users` – Fetch all users.
+- `GET /api/admin/orders` – Fetch all orders.
+- `PUT /api/admin/orders/:id` – Change order status.
+- `GET /api/admin/stats` – Fetch total users, orders, revenue.
+
+## 8. Deployment & Hosting
+
+| Component  | Deployment Platform |
+|------------|----------------------|
+| **Frontend** | Vercel |
+| **Backend**  | Firebase / Heroku |
+| **Database** | MySQL Cloud |
+
+---
+
+## Future Enhancements
+
+✅ **AI-Based Recommendations** – Suggests products based on browsing history.  
+✅ **Live Chat Support** – Allows real-time customer queries.  
+✅ **Multi-Vendor Support** – Enables multiple sellers on the platform.  
+✅ **Progressive Web App (PWA)** – Optimized for mobile users.  
+
+---
+
+## 10. Conclusion
+
+This Flipkart Clone aims to provide a fully functional e-commerce experience with scalability, security, and performance optimization. The project will serve as a strong portfolio piece, showcasing expertise in full-stack web development with modern technologies.
 
 
 
